@@ -1,0 +1,21 @@
+# prometheus service configuration file
+---------------------------------------
+[Unit]
+Description=Prometheus Server
+
+[Service]
+ExecStart=/opt/prometheus/prometheus --config.file=/opt/prometheus/prometheus.yml
+
+[Install]
+WantedBy=multi-user.target
+
+# node_exporter service configuration files
+---------------------------------------
+[Unit]
+Description=Node Exporter
+
+[Service]
+ExecStart=/opt/node_exporter/node_exporter
+
+[Install]
+WantedBy=multi-user.target
