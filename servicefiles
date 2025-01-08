@@ -19,3 +19,14 @@ ExecStart=/opt/node_exporter/node_exporter
 
 [Install]
 WantedBy=multi-user.target
+
+# alert_manager service configuration files
+-------------------------------------
+[Unit]
+Description=AlertManager Server
+
+[Service]
+ExecStart=/opt/alertmanager/alertmanager --config.file=/opt/alertmanager/alertmanager.yml
+
+[Install]
+WantedBy=multi-user.target
